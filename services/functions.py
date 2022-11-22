@@ -1,10 +1,9 @@
 import pika, json
 
-
 class QueueRabbit():
     def __init__(self) -> None:
-        credentials = pika.PlainCredentials(username='guest', password='guest')
-        parameters = pika.ConnectionParameters(host="192.168.1.109",port=5672,virtual_host='/', credentials=credentials)
+        parameters = pika.ConnectionParameters(host="192.168.1.109",port=5672,virtual_host='/', 
+                                               credentials=pika.PlainCredentials(username='guest', password='guest'))
         self.connection = pika.BlockingConnection(parameters)
         self.channel = self.connection.channel()
 
