@@ -41,5 +41,5 @@ class QueueRabbit():
         
     def sendMessage(self, message: str):
         self.channel.basic_publish(exchange='', routing_key='teste_queue', body=json.dumps(message))
-        self.connection.close()
-        print(" [x] Sent 'Hello World!'")
+        #self.connection.close()
+        print(" [x] Menssagem enviada!'")
